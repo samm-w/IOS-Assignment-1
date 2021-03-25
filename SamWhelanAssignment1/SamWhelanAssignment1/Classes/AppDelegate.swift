@@ -6,15 +6,161 @@
 //
 
 import UIKit
+import SQLite3
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var databaseName: String? = "Assignment2.db"
+    var databasePath: String?
+    var people : [Data] = []
+       
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let documentPaths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        
+        let documentsDir = documentPaths[0]
+        databasePath = documentsDir.appending("/" + databaseName!)
+        
+        checkAndCreateDatabase()
+        readDataFromDatabase()
+        
         return true
+    }
+    
+    func readDataFromDatabase(){
+        people.removeAll()
+        
+        var db: OpaquePointer? = nil
+        
+        if sqlite3_open(self.databasePath, &db) == SQLITE_OK {
+            
+            print("Successfully opened connection to database at \(self.databasePath)")
+            
+            var queryStatement: OpaquePointer? = nil
+            var queryStatementString: String = "select * from entries"
+            
+            if sqlite3_prepare_v2(db, queryStatementString, -1, &queryStatement, nil) == SQLITE_OK{
+                
+                while sqlite3_step(queryStatement) == SQLITE_ROW {
+                    
+                    let id: Int = Int (sqlite3_column_int(queryStatement, 0))
+                    let cname = sqlite3_column_text(queryStatement, 1)
+                    let cemail = sqlite3_column_text(queryStatement, 3)
+                    let caddress = sqlite3_column_text(queryStatement, 4)
+                    let cphonenumber = sqlite3_column_text(queryStatement, 5)
+                    let age: Int = Int(sqlite3_column_int(queryStatement, 6))
+                    let cgender = sqlite3_column_text(queryStatement, 7)
+                    let cdate = sqlite3_column_text(queryStatement, 8)
+                    let avatar: Int = Int(sqlite3_column_int(queryStatement, 9))
+                    
+                    let name = String(cString: cname!)
+                    let email = String(cString: cemail!)
+                    let address = String(cString: caddress!)
+                    let phoneNumber = String(cString: cphonenumber!)
+                    let gender = String(cString: cgender!)
+                    let date = String(cString: cdate!)
+                    
+                    let data: Data = Data.init()
+                    data.initWithData(theRow: id, theName: name, theEmail: email, theAddress: address, thePhoneNumber: phoneNumber, theAge: age, theGender: gender, theDate: date, theAvatar: avatar)
+                    people.append(data)
+                    
+                    print("Query Result")
+                    print("\(id) | \(name)")
+                    
+                    
+                    
+                }
+                
+                sqlite3_finalize(queryStatement)
+                
+            }else{
+                print("Select statement could not be prepared")
+            }
+            
+            sqlite3_close(db)
+            
+        }else{
+            print("Unable to open database")
+        }
+        
+    }
+    
+    func insertIntoDatabase(person: Data) -> Bool{
+        
+        var db: OpaquePointer? = nil
+        var returnCode: Bool = true
+        
+        if sqlite3_open(self.databasePath, &db) == SQLITE_OK {
+            
+            var insertStatement: OpaquePointer? = nil
+            var insertStatementString: String = "insert into entries values(NULL, ?, ?, ?, ?, ?, ?, ?, ?)"
+            
+            if sqlite3_prepare_v2(db, insertStatementString, -1, &insertStatement, nil) == SQLITE_OK{
+                
+                let nameStr = person.name! as NSString
+                let emailStr = person.email! as NSString
+                let addressStr = person.address! as NSString
+                let phoneNumberStr = person.phoneNumber! as NSString
+                let ageStr = person.age! as NSInteger
+                let genderStr = person.gender! as NSString
+                let dateStr = person.date! as NSString
+                let avatarStr = person.avatar! as NSInteger
+                
+                sqlite3_bind_text(insertStatement, 1, nameStr.utf8String, -1, nil)
+                sqlite3_bind_text(insertStatement, 2, emailStr.utf8String, -1, nil)
+                sqlite3_bind_text(insertStatement, 3, addressStr.utf8String, -1, nil)
+                sqlite3_bind_text(insertStatement, 4, phoneNumberStr.utf8String, -1, nil)
+                sqlite3_bind_int(insertStatement, 5, Int32(ageStr))
+                sqlite3_bind_text(insertStatement, 6, genderStr.utf8String, -1, nil)
+                sqlite3_bind_text(insertStatement, 7, dateStr.utf8String, -1, nil)
+                sqlite3_bind_int(insertStatement, 8, Int32(avatarStr))
+                
+                if sqlite3_step(insertStatement) == SQLITE_DONE{
+                    let rowID = sqlite3_last_insert_rowid(db)
+                    print("successfully inserted row \(rowID)")
+                    
+                }else{
+                    print("Could not insert row")
+                    returnCode = false
+                }
+                sqlite3_finalize(insertStatement)
+                
+            }else{
+                print("insert statement could not be prepared")
+                returnCode = false
+            }
+            
+            sqlite3_close(db)
+            
+        }else{
+            print("Unable to open database")
+            returnCode = false
+        }
+        
+        return returnCode
+        
+    }
+    
+    func checkAndCreateDatabase(){
+        
+        var success = false
+        let fileManager = FileManager.default
+        
+        success = fileManager.fileExists(atPath: databasePath!)
+        
+        if success {
+            return
+        }
+        
+        let databasePathFromApp = Bundle.main.resourcePath?.appending("/" + databaseName!)
+        
+        try? fileManager.copyItem(atPath: databasePathFromApp!, toPath: databasePath!)
+        
+        return
+        
     }
 
     // MARK: UISceneSession Lifecycle

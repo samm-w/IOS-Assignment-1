@@ -22,38 +22,6 @@ class FormViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var slAge: UISlider!
     @IBOutlet var lbAge: UILabel!
     
-    @IBOutlet var sgGender: UISegmentedControl!
-    @IBOutlet var datePicker: UIDatePicker!
-    
-    var avatarID: Int = 1
-    
-    @IBAction func addPerson(sender: Any){
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        let dateText = dateFormatter.string(from: datePicker.date)
-        self.view.endEditing(true)
-        
-        let person: Data = Data.init()
-        person.initWithData(theRow: 0, theName: tfName.text!, theEmail: tfEmail.text!, theAddress: tfAddress.text!, thePhoneNumber: tfPhoneNumber.text!, theAge: Int(slAge.value), theGender: String(sgGender.selectedSegmentIndex), theDate: dateText, theAvatar: avatarID)
-        
-        let mainDelegate = UIApplication.shared.delegate as! AppDelegate
-        
-        let returnCode = mainDelegate.insertIntoDatabase(person: person)
-        
-        var returnMsg: String = "person added"
-        
-        if returnCode == false{
-            returnMsg = "Person add failed"
-        }
-        
-        let alertController = UIAlertController(title: "SQLite add", message: returnMsg, preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
-        alertController.addAction(cancelAction)
-        present(alertController, animated: true)
-        
-    }
-    
     func updateLabel(){
         let age = slAge.value
         let strAge = String(format: "%.0f", age)

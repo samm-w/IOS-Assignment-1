@@ -23,14 +23,6 @@
 		FDC87C8C25D5B91700BA8201 /* about.png in Resources */ = {isa = PBXBuildFile; fileRef = FDC87C8B25D5B91700BA8201 /* about.png */; };
 		FDC87C8F25D5B92500BA8201 /* contact-form.png in Resources */ = {isa = PBXBuildFile; fileRef = FDC87C8E25D5B92500BA8201 /* contact-form.png */; };
 		FDC87C9225D5BFFC00BA8201 /* enter.png in Resources */ = {isa = PBXBuildFile; fileRef = FDC87C9125D5BFFC00BA8201 /* enter.png */; };
-		FDC87E73260A63FC00BA8201 /* DatabaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC87E72260A63FC00BA8201 /* DatabaseTableViewController.swift */; };
-		FDC87E76260A642D00BA8201 /* AvatarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC87E75260A642D00BA8201 /* AvatarViewController.swift */; };
-		FDC87E7A260A6D5500BA8201 /* Assignment2.db in Resources */ = {isa = PBXBuildFile; fileRef = FDC87E79260A6D5500BA8201 /* Assignment2.db */; };
-		FDC87E85260CE62200BA8201 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC87E84260CE62200BA8201 /* Data.swift */; };
-		FDC87E89260CF36A00BA8201 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FDC87E88260CF35F00BA8201 /* libsqlite3.0.tbd */; };
-		FDC87E8C260CF37D00BA8201 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FDC87E8B260CF37800BA8201 /* libsqlite3.tbd */; };
-		FDC87EAC260CFE1E00BA8201 /* SiteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC87EAB260CFE1E00BA8201 /* SiteCell.swift */; };
-		FDC87EAF260CFE8D00BA8201 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC87EAE260CFE8D00BA8201 /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,14 +44,6 @@
 		FDC87C8B25D5B91700BA8201 /* about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about.png; sourceTree = "<group>"; };
 		FDC87C8E25D5B92500BA8201 /* contact-form.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "contact-form.png"; sourceTree = "<group>"; };
 		FDC87C9125D5BFFC00BA8201 /* enter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enter.png; sourceTree = "<group>"; };
-		FDC87E72260A63FC00BA8201 /* DatabaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseTableViewController.swift; sourceTree = "<group>"; };
-		FDC87E75260A642D00BA8201 /* AvatarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarViewController.swift; sourceTree = "<group>"; };
-		FDC87E79260A6D5500BA8201 /* Assignment2.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = Assignment2.db; sourceTree = "<group>"; };
-		FDC87E84260CE62200BA8201 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
-		FDC87E88260CF35F00BA8201 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
-		FDC87E8B260CF37800BA8201 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		FDC87EAB260CFE1E00BA8201 /* SiteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiteCell.swift; sourceTree = "<group>"; };
-		FDC87EAE260CFE8D00BA8201 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,8 +51,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FDC87E8C260CF37D00BA8201 /* libsqlite3.tbd in Frameworks */,
-				FDC87E89260CF36A00BA8201 /* libsqlite3.0.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,7 +62,6 @@
 			children = (
 				FDC87C5925D581EB00BA8201 /* SamWhelanAssignment1 */,
 				FDC87C5825D581EB00BA8201 /* Products */,
-				FDC87E87260CF35F00BA8201 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,7 +76,6 @@
 		FDC87C5925D581EB00BA8201 /* SamWhelanAssignment1 */ = {
 			isa = PBXGroup;
 			children = (
-				FDC87E78260A6D1800BA8201 /* Database */,
 				FDC87C7225D5821400BA8201 /* Classes */,
 				FDC87C7125D5820A00BA8201 /* View Controllers */,
 				FDC87C7025D581FD00BA8201 /* Storyboards */,
@@ -136,9 +116,6 @@
 				FDC87C7625D583CD00BA8201 /* FormViewController.swift */,
 				FDC87C7925D583D800BA8201 /* WebViewController.swift */,
 				FDC87C7C25D583E500BA8201 /* AboutViewController.swift */,
-				FDC87E72260A63FC00BA8201 /* DatabaseTableViewController.swift */,
-				FDC87E75260A642D00BA8201 /* AvatarViewController.swift */,
-				FDC87EAE260CFE8D00BA8201 /* TableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -146,29 +123,10 @@
 		FDC87C7225D5821400BA8201 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				FDC87EAB260CFE1E00BA8201 /* SiteCell.swift */,
 				FDC87C5A25D581EB00BA8201 /* AppDelegate.swift */,
 				FDC87C5C25D581EB00BA8201 /* SceneDelegate.swift */,
-				FDC87E84260CE62200BA8201 /* Data.swift */,
 			);
 			path = Classes;
-			sourceTree = "<group>";
-		};
-		FDC87E78260A6D1800BA8201 /* Database */ = {
-			isa = PBXGroup;
-			children = (
-				FDC87E79260A6D5500BA8201 /* Assignment2.db */,
-			);
-			path = Database;
-			sourceTree = "<group>";
-		};
-		FDC87E87260CF35F00BA8201 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				FDC87E8B260CF37800BA8201 /* libsqlite3.tbd */,
-				FDC87E88260CF35F00BA8201 /* libsqlite3.0.tbd */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,7 +196,6 @@
 				FDC87C6225D581EB00BA8201 /* Main.storyboard in Resources */,
 				FDC87C8F25D5B92500BA8201 /* contact-form.png in Resources */,
 				FDC87C8C25D5B91700BA8201 /* about.png in Resources */,
-				FDC87E7A260A6D5500BA8201 /* Assignment2.db in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,14 +209,9 @@
 				FDC87C7D25D583E500BA8201 /* AboutViewController.swift in Sources */,
 				FDC87C5F25D581EB00BA8201 /* ViewController.swift in Sources */,
 				FDC87C5B25D581EB00BA8201 /* AppDelegate.swift in Sources */,
-				FDC87E76260A642D00BA8201 /* AvatarViewController.swift in Sources */,
 				FDC87C7725D583CD00BA8201 /* FormViewController.swift in Sources */,
 				FDC87C7A25D583D800BA8201 /* WebViewController.swift in Sources */,
-				FDC87EAF260CFE8D00BA8201 /* TableViewController.swift in Sources */,
 				FDC87C5D25D581EB00BA8201 /* SceneDelegate.swift in Sources */,
-				FDC87E85260CE62200BA8201 /* Data.swift in Sources */,
-				FDC87EAC260CFE1E00BA8201 /* SiteCell.swift in Sources */,
-				FDC87E73260A63FC00BA8201 /* DatabaseTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
