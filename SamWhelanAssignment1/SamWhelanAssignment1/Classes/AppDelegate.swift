@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let documentPaths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         
         let documentsDir = documentPaths[0]
+        print("Documents dir is \(documentPaths[0])")
         databasePath = documentsDir.appending("/" + databaseName!)
         
         checkAndCreateDatabase()
@@ -48,13 +49,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     
                     let id: Int = Int (sqlite3_column_int(queryStatement, 0))
                     let cname = sqlite3_column_text(queryStatement, 1)
-                    let cemail = sqlite3_column_text(queryStatement, 3)
-                    let caddress = sqlite3_column_text(queryStatement, 4)
-                    let cphonenumber = sqlite3_column_text(queryStatement, 5)
-                    let age: Int = Int(sqlite3_column_int(queryStatement, 6))
-                    let cgender = sqlite3_column_text(queryStatement, 7)
-                    let cdate = sqlite3_column_text(queryStatement, 8)
-                    let avatar: Int = Int(sqlite3_column_int(queryStatement, 9))
+                    let cemail = sqlite3_column_text(queryStatement, 2)
+                    let caddress = sqlite3_column_text(queryStatement, 3)
+                    let cphonenumber = sqlite3_column_text(queryStatement, 4)
+                    let age: Int = Int(sqlite3_column_int(queryStatement, 5))
+                    let cgender = sqlite3_column_text(queryStatement, 6)
+                    let cdate = sqlite3_column_text(queryStatement, 7)
+                    let avatar: Int = Int(sqlite3_column_int(queryStatement, 8))
                     
                     let name = String(cString: cname!)
                     let email = String(cString: cemail!)
@@ -68,7 +69,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     people.append(data)
                     
                     print("Query Result")
-                    print("\(id) | \(name)")
+                    print("\(id) | \(name) | Avatar: \(avatar)")
                     
                     
                     
@@ -121,6 +122,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 if sqlite3_step(insertStatement) == SQLITE_DONE{
                     let rowID = sqlite3_last_insert_rowid(db)
                     print("successfully inserted row \(rowID)")
+                    print("Avatar ID is \(avatarStr)")
                     
                 }else{
                     print("Could not insert row")

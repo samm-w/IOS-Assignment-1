@@ -26,6 +26,7 @@ class FormViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var datePicker: UIDatePicker!
     
     var avatarID: Int = 1
+    var person: Data = Data.init()
     
     @IBAction func addPerson(sender: Any){
         
@@ -34,24 +35,15 @@ class FormViewController: UIViewController, UITextFieldDelegate {
         let dateText = dateFormatter.string(from: datePicker.date)
         self.view.endEditing(true)
         
-        let person: Data = Data.init()
-        person.initWithData(theRow: 0, theName: tfName.text!, theEmail: tfEmail.text!, theAddress: tfAddress.text!, thePhoneNumber: tfPhoneNumber.text!, theAge: Int(slAge.value), theGender: String(sgGender.selectedSegmentIndex), theDate: dateText, theAvatar: avatarID)
+        self.person.initWithData(theRow: 0, theName: tfName.text!, theEmail: tfEmail.text!, theAddress: tfAddress.text!, thePhoneNumber: tfPhoneNumber.text!, theAge: Int(slAge.value), theGender: String(sgGender.selectedSegmentIndex), theDate: dateText, theAvatar: avatarID)
         
-        let mainDelegate = UIApplication.shared.delegate as! AppDelegate
+        performSegue(withIdentifier: "PeopleTransfer", sender: self)
         
-        let returnCode = mainDelegate.insertIntoDatabase(person: person)
-        
-        var returnMsg: String = "person added"
-        
-        if returnCode == false{
-            returnMsg = "Person add failed"
-        }
-        
-        let alertController = UIAlertController(title: "SQLite add", message: returnMsg, preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
-        alertController.addAction(cancelAction)
-        present(alertController, animated: true)
-        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        var vc = segue.destination as! AvatarViewController
+        vc.person = self.person
     }
     
     func updateLabel(){

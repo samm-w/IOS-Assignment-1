@@ -9,6 +9,8 @@ import UIKit
 
 class DatabaseTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet var tblView: UITableView!
+    
     let mainDelegate = UIApplication.shared.delegate as! AppDelegate
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -19,12 +21,24 @@ class DatabaseTableViewController: UIViewController, UITableViewDataSource, UITa
         return 60
     }
     
+    func selectAvatar(value: Int) -> UIImage{
+        if value == 0{
+            return UIImage(named: "pinkguy.jpg")!
+        }else if value == 1 {
+            return UIImage(named: "redguy.png")!
+        }else{
+            return UIImage(named: "whiteguy.png")!
+        }
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let tableCell = tableView.dequeueReusableCell(withIdentifier: "cell") as? SiteCell ?? SiteCell(style: .default, reuseIdentifier: "cell")
         
         let rowNum = indexPath.row
         tableCell.primaryLabel.text = mainDelegate.people[rowNum].name
-        tableCell.secondaryLabel.text = mainDelegate.people[rowNum].email
+        tableCell.secondaryLabel.text = String(mainDelegate.people[rowNum].age!)
+        tableCell.myImageView.image = selectAvatar(value: mainDelegate.people[rowNum].avatar!)
+        
         
         tableCell.accessoryType = .disclosureIndicator
         return tableCell
@@ -45,6 +59,8 @@ class DatabaseTableViewController: UIViewController, UITableViewDataSource, UITa
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tblView.backgroundView = UIImageView(image: UIImage(named: "background.jpg"))
 
         mainDelegate.readDataFromDatabase()
         

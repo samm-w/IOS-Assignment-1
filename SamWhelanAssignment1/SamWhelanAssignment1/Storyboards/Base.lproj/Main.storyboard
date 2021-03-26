@@ -153,8 +153,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="enter.png"/>
                                 <connections>
-                                    <action selector="addPersonWithSender:" destination="pUk-0O-X1f" eventType="touchUpInside" id="keY-oW-sdW"/>
-                                    <action selector="submitInfoWithSender:" destination="pUk-0O-X1f" eventType="touchUpInside" id="kBC-wA-hCU"/>
+                                    <action selector="addPersonWithSender:" destination="pUk-0O-X1f" eventType="touchUpInside" id="ugL-S9-W7f"/>
+                                    <segue destination="WRE-3A-csF" kind="presentation" identifier="PeopleTransfer" id="Ah7-un-sNi"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="John Doe" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="45c-nN-o4h">
@@ -200,14 +200,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jNg-Ua-a1Q">
-                                <rect key="frame" x="269" y="651" width="111" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Select an Avatar"/>
-                                <connections>
-                                    <segue destination="WRE-3A-csF" kind="presentation" id="8e0-K2-l6X"/>
-                                </connections>
-                            </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="PpW-ZA-4d5">
                                 <rect key="frame" x="138" y="469" width="127" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -255,41 +247,61 @@
                                     <navigationItem title="Choose an Avatar" id="g9j-At-hKx">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="BGc-3Z-N3H">
                                             <connections>
-                                                <segue destination="QGH-KJ-hzQ" kind="unwind" unwindAction="unwindToHomeViewControllerWithSender:" id="kgu-Fr-fa3"/>
+                                                <segue destination="QGH-KJ-hzQ" kind="unwind" unwindAction="unwindToHomeViewControllerWithSender:" id="uOw-aQ-eTH"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cuz-kH-30A">
-                                <rect key="frame" x="42" y="160" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Red"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dwy-lv-zag">
-                                <rect key="frame" x="42" y="471" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Pink"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="daL-qH-K3s">
-                                <rect key="frame" x="183" y="603" width="49" height="30"/>
+                                <rect key="frame" x="183" y="666" width="49" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="addPersonWithSender:" destination="WRE-3A-csF" eventType="touchUpInside" id="lIb-Yb-Gtr"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xRz-1l-3O5">
-                                <rect key="frame" x="37" y="311" width="40" height="30"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pinkguy" translatesAutoresizingMaskIntoConstraints="NO" id="tDD-3L-J2m">
+                                <rect key="frame" x="87" y="84" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="White"/>
-                            </button>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="redguy" translatesAutoresizingMaskIntoConstraints="NO" id="xuA-Q8-1WV">
+                                <rect key="frame" x="87" y="272" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="whiteguy" translatesAutoresizingMaskIntoConstraints="NO" id="2Dx-6b-CKb">
+                                <rect key="frame" x="87" y="452" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="lpl-0D-q3l">
+                                <rect key="frame" x="100" y="615" width="214" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Pink"/>
+                                    <segment title="Red"/>
+                                    <segment title="White"/>
+                                </segments>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="17S-ac-tSu">
+                                <rect key="frame" x="87" y="243" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Yf0-cv-K8F"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="sgAvatar" destination="lpl-0D-q3l" id="2Uo-XW-WqS"/>
+                        <outlet property="testLbl" destination="17S-ac-tSu" id="EN4-8n-Hra"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yuB-Mc-KrV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="QGH-KJ-hzQ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1042" y="798"/>
+            <point key="canvasLocation" x="1107" y="890"/>
         </scene>
         <!--Database Table View Controller-->
         <scene sceneID="ziW-EF-1M1">
@@ -325,6 +337,9 @@
                         <viewLayoutGuide key="safeArea" id="JnZ-gc-e0P"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="tblView" destination="OvW-hF-B7V" id="HhK-bM-bUc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cvG-S6-xst" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="Sct-ee-0gG" userLabel="Exit" sceneMemberID="exit"/>
@@ -432,7 +447,10 @@
         <image name="contact-form.png" width="384" height="384"/>
         <image name="enter.png" width="384" height="384"/>
         <image name="nikki-van-toorn-IF0UuvY1CXI-unsplash.jpg" width="3648" height="5472"/>
+        <image name="pinkguy" width="194" height="260"/>
+        <image name="redguy" width="480" height="643"/>
         <image name="web-search-engine.png" width="384" height="384"/>
+        <image name="whiteguy" width="1536" height="2000"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
