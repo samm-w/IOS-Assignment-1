@@ -42,7 +42,7 @@ class AvatarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        testLbl.text = String(person.avatar!)
+        
         
         // Do any additional setup after loading the view.
     }

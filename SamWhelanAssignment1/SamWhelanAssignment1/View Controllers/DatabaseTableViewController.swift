@@ -36,7 +36,7 @@ class DatabaseTableViewController: UIViewController, UITableViewDataSource, UITa
         
         let rowNum = indexPath.row
         tableCell.primaryLabel.text = mainDelegate.people[rowNum].name
-        tableCell.secondaryLabel.text = String(mainDelegate.people[rowNum].age!)
+        tableCell.secondaryLabel.text = mainDelegate.people[rowNum].email
         tableCell.myImageView.image = selectAvatar(value: mainDelegate.people[rowNum].avatar!)
         
         
@@ -48,8 +48,9 @@ class DatabaseTableViewController: UIViewController, UITableViewDataSource, UITa
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let rowNum = indexPath.row
+        //let gender = selectGender(value: mainDelegate.people[rowNum].gender)
         
-        let alertController = UIAlertController(title: mainDelegate.people[rowNum].name, message: mainDelegate.people[rowNum].address, preferredStyle: .alert)
+        let alertController = UIAlertController(title: mainDelegate.people[rowNum].name, message: "Address: \(mainDelegate.people[rowNum].address ?? "default")\n Phone Number \(mainDelegate.people[rowNum].phoneNumber ?? "123-456-7890")\n Age: \(mainDelegate.people[rowNum].age ?? 0)\n Gender: \(mainDelegate.people[rowNum].gender ?? "NA")\n Date: \(mainDelegate.people[rowNum].date ?? "NA")", preferredStyle: .alert)
         
         let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         

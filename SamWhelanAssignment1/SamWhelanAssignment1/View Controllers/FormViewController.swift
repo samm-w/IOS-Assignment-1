@@ -35,7 +35,8 @@ class FormViewController: UIViewController, UITextFieldDelegate {
         let dateText = dateFormatter.string(from: datePicker.date)
         self.view.endEditing(true)
         
-        self.person.initWithData(theRow: 0, theName: tfName.text!, theEmail: tfEmail.text!, theAddress: tfAddress.text!, thePhoneNumber: tfPhoneNumber.text!, theAge: Int(slAge.value), theGender: String(sgGender.selectedSegmentIndex), theDate: dateText, theAvatar: avatarID)
+        self.person.initWithData(theRow: 0, theName: tfName.text!, theEmail: tfEmail.text!, theAddress: tfAddress.text!, thePhoneNumber: tfPhoneNumber.text!, theAge: Int(slAge.value), theGender: selectGender(value: sgGender.selectedSegmentIndex), theDate: dateText, theAvatar: avatarID)
+        rememberEnteredData()
         
         performSegue(withIdentifier: "PeopleTransfer", sender: self)
         
@@ -44,6 +45,23 @@ class FormViewController: UIViewController, UITextFieldDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         var vc = segue.destination as! AvatarViewController
         vc.person = self.person
+    }
+    
+    func selectGender(value: Int)-> String{
+        if value == 0 {
+            return "Male"
+        }else{
+            return "Female"
+        }
+    }
+    
+    func rememberEnteredData(){
+        let defaults = UserDefaults.standard
+        defaults.set(tfName.text, forKey: "lastName")
+        defaults.set(tfEmail.text, forKey: "lastEmail")
+        defaults.set(tfAddress.text, forKey: "lastAddress")
+        defaults.set(tfPhoneNumber.text, forKey: "lastPhoneNumber")
+        defaults.synchronize()
     }
     
     func updateLabel(){
@@ -80,6 +98,24 @@ class FormViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let defaults = UserDefaults.standard
+        
+        if let name = defaults.object(forKey: "lastName") as? String {
+            tfName.text = name
+        }
+        
+        if let email = defaults.object(forKey: "lastEmail") as? String {
+            tfEmail.text = email
+        }
+        
+        if let address = defaults.object(forKey: "lastAddress") as? String {
+            tfAddress.text = address
+        }
+        
+        if let phoneNumber = defaults.object(forKey: "lastPhoneNumber") as? String {
+            tfPhoneNumber.text = phoneNumber
+        }
+        
         // Do any additional setup after loading the view.
         updateLabel()
     }
