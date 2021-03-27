@@ -30,6 +30,7 @@
 		FDC87E8C260CF37D00BA8201 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FDC87E8B260CF37800BA8201 /* libsqlite3.tbd */; };
 		FDC87EAC260CFE1E00BA8201 /* SiteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC87EAB260CFE1E00BA8201 /* SiteCell.swift */; };
 		FDC87EBD260E7FBC00BA8201 /* Assignment2.db in Resources */ = {isa = PBXBuildFile; fileRef = FDC87EBC260E7FBC00BA8201 /* Assignment2.db */; };
+		FDC87EC1260F992A00BA8201 /* cells.png in Resources */ = {isa = PBXBuildFile; fileRef = FDC87EC0260F992A00BA8201 /* cells.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		FDC87E8B260CF37800BA8201 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		FDC87EAB260CFE1E00BA8201 /* SiteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiteCell.swift; sourceTree = "<group>"; };
 		FDC87EBC260E7FBC00BA8201 /* Assignment2.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = Assignment2.db; sourceTree = "<group>"; };
+		FDC87EC0260F992A00BA8201 /* cells.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cells.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 		FDC87C6F25D581F600BA8201 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				FDC87EC0260F992A00BA8201 /* cells.png */,
 				FDC87C9125D5BFFC00BA8201 /* enter.png */,
 				FDC87C8E25D5B92500BA8201 /* contact-form.png */,
 				FDC87C8B25D5B91700BA8201 /* about.png */,
@@ -228,6 +231,7 @@
 				FDC87C8025D5B10000BA8201 /* loading.png in Resources */,
 				FDC87C8625D5B31F00BA8201 /* nikki-van-toorn-IF0UuvY1CXI-unsplash.jpg in Resources */,
 				FDC87C8925D5B84C00BA8201 /* web-search-engine.png in Resources */,
+				FDC87EC1260F992A00BA8201 /* cells.png in Resources */,
 				FDC87C8325D5B21200BA8201 /* background.jpg in Resources */,
 				FDC87C6725D581EC00BA8201 /* LaunchScreen.storyboard in Resources */,
 				FDC87C6425D581EC00BA8201 /* Assets.xcassets in Resources */,

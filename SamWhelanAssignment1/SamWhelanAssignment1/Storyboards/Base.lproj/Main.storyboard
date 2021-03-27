@@ -21,7 +21,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bwE-c2-oJR">
-                                <rect key="frame" x="131" y="300" width="150" height="150"/>
+                                <rect key="frame" x="146" y="273" width="135" height="135"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="web-search-engine.png"/>
                                 <connections>
@@ -29,7 +29,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CVS-yS-cFp">
-                                <rect key="frame" x="131" y="500" width="150" height="118"/>
+                                <rect key="frame" x="138" y="424" width="150" height="118"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="about.png"/>
                                 <connections>
@@ -44,17 +44,17 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fUa-y4-oD0">
-                                <rect key="frame" x="145" y="100" width="150" height="150"/>
+                                <rect key="frame" x="156" y="116" width="125" height="125"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="contact-form.png"/>
                                 <connections>
                                     <segue destination="pUk-0O-X1f" kind="presentation" id="ork-l0-cQs"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="etG-MF-0HO">
-                                <rect key="frame" x="169" y="658" width="74" height="58"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="etG-MF-0HO">
+                                <rect key="frame" x="151" y="581" width="125" height="125"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="View Table"/>
+                                <state key="normal" title="View Table" image="cells.png"/>
                                 <connections>
                                     <segue destination="bm1-So-Djn" kind="presentation" id="BTQ-aG-0O4"/>
                                 </connections>
@@ -240,6 +240,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="nikki-van-toorn-IF0UuvY1CXI-unsplash.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="9GS-Mh-hId">
+                                <rect key="frame" x="0.0" y="20" width="414" height="696"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="455-OY-SMl">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -253,28 +257,20 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="daL-qH-K3s">
-                                <rect key="frame" x="183" y="666" width="49" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Submit"/>
-                                <connections>
-                                    <action selector="addPersonWithSender:" destination="WRE-3A-csF" eventType="touchUpInside" id="lIb-Yb-Gtr"/>
-                                </connections>
-                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pinkguy" translatesAutoresizingMaskIntoConstraints="NO" id="tDD-3L-J2m">
-                                <rect key="frame" x="87" y="84" width="240" height="128"/>
+                                <rect key="frame" x="147" y="90" width="120" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="redguy" translatesAutoresizingMaskIntoConstraints="NO" id="xuA-Q8-1WV">
-                                <rect key="frame" x="87" y="272" width="240" height="128"/>
+                                <rect key="frame" x="147" y="260" width="120" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="whiteguy" translatesAutoresizingMaskIntoConstraints="NO" id="2Dx-6b-CKb">
-                                <rect key="frame" x="87" y="452" width="240" height="128"/>
+                                <rect key="frame" x="147" y="430" width="120" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="lpl-0D-q3l">
-                                <rect key="frame" x="100" y="615" width="214" height="32"/>
+                                <rect key="frame" x="100" y="572" width="214" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="Pink"/>
@@ -282,26 +278,27 @@
                                     <segment title="White"/>
                                 </segments>
                             </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="17S-ac-tSu">
-                                <rect key="frame" x="87" y="243" width="42" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UrL-cH-WrT">
+                                <rect key="frame" x="177" y="636" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <state key="normal" backgroundImage="enter.png"/>
+                                <connections>
+                                    <action selector="addPersonWithSender:" destination="pUk-0O-X1f" eventType="touchUpInside" id="4B7-QB-EYk"/>
+                                    <action selector="addPersonWithSender:" destination="WRE-3A-csF" eventType="touchUpInside" id="d7g-2o-Uzr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Yf0-cv-K8F"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
                         <outlet property="sgAvatar" destination="lpl-0D-q3l" id="2Uo-XW-WqS"/>
-                        <outlet property="testLbl" destination="17S-ac-tSu" id="EN4-8n-Hra"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yuB-Mc-KrV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="QGH-KJ-hzQ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1107" y="890"/>
+            <point key="canvasLocation" x="1105.7971014492755" y="889.4021739130435"/>
         </scene>
         <!--Database Table View Controller-->
         <scene sceneID="ziW-EF-1M1">
@@ -444,6 +441,7 @@
     </scenes>
     <resources>
         <image name="about.png" width="384" height="384"/>
+        <image name="cells.png" width="384" height="384"/>
         <image name="contact-form.png" width="384" height="384"/>
         <image name="enter.png" width="384" height="384"/>
         <image name="nikki-van-toorn-IF0UuvY1CXI-unsplash.jpg" width="3648" height="5472"/>
